@@ -8,9 +8,10 @@ describe CharacterSpokenLinesCount::ParseDocument do
     end
     
     describe "#parse" do
-        it "must returned hash"
-        parse_document = CharacterSpokenLinesCount::ParseDocument.new
-        hash_character_count = parse_document.get_hash(@document)
-        hash_character_count["MACBETH"].must_equal 741
+        it "must returned hash" do
+            parse_document = CharacterSpokenLinesCount::ParseDocument.new
+            hash_character_count = parse_document.get_hash(@document)
+            hash_character_count.wont_be_nil
+        end
     end
 end
