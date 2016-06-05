@@ -9,9 +9,14 @@ describe CharacterSpokenLinesCount::ParseDocument do
     
     describe "#parse" do
         it "must returned hash" do
-            parse_document = CharacterSpokenLinesCount::ParseDocument.new
-            hash_character_count = parse_document.get_hash(@document)
+            parse_document = CharacterSpokenLinesCount::ParseDocument.new(@document)
+            hash_character_count = parse_document.get_hash()
             hash_character_count.wont_be_nil
+        end
+        it "should raise ParseDocumentException if not initialized object" do
+            proc{
+                parse_document = CharacterSpokenLinesCount::ParseDocument.new
+            }.must_raise CharacterSpokenLinesCount::Error::ParseDocumentException
         end
     end
 end
