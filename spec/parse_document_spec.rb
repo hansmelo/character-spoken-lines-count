@@ -23,7 +23,7 @@ describe CharacterSpokenLinesCount::ParseDocument do
         it "must returned the count of key" do
             parse_document = CharacterSpokenLinesCount::ParseDocument.new(@document)
             hash_character_count = parse_document.get_hash()
-            hash_character_count["Doctor"].must_equal 2
+            hash_character_count["Doctor"].must_equal 45
         end
         
     end
