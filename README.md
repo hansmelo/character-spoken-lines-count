@@ -1,0 +1,1 @@
+# character-spoken-lines-count
