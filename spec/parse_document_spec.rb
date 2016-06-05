@@ -20,5 +20,11 @@ describe CharacterSpokenLinesCount::ParseDocument do
               CharacterSpokenLinesCount::ParseDocument.new(nil)
             }.must_raise CharacterSpokenLinesCount::Error::ParseDocumentException
         end
+        it "must returned the count of key" do
+            parse_document = CharacterSpokenLinesCount::ParseDocument.new(@document)
+            hash_character_count = parse_document.get_hash()
+            hash_character_count["Doctor"].must_equal 2
+        end
+        
     end
 end
