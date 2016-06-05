@@ -15,7 +15,7 @@ describe CharacterSpokenLinesCount::ParseDocument do
             hash_character_count = parse_document.get_hash()
             hash_character_count.wont_be_nil
         end
-        it "should raise ParseDocumentException if not initialized object" do
+        it "must raise ParseDocumentException if not initialized object" do
             proc{
               CharacterSpokenLinesCount::ParseDocument.new(nil)
             }.must_raise CharacterSpokenLinesCount::Error::ParseDocumentException
@@ -25,6 +25,10 @@ describe CharacterSpokenLinesCount::ParseDocument do
             hash_character_count = parse_document.get_hash()
             hash_character_count["Doctor"].must_equal 45
         end
-        
+        it "must not returned the count of ALL" do
+            parse_document = CharacterSpokenLinesCount::ParseDocument.new(@document)
+            hash_character_count = parse_document.get_hash()
+            hash_character_count["ALL"].must_be_nil
+        end
     end
 end
