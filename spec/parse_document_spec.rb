@@ -2,6 +2,8 @@ require 'minitest/spec'
 require 'minitest/autorun'
 require 'nokogiri' 
 require_relative '../lib/parse_document'
+require_relative '../lib/exceptions'
+
 describe CharacterSpokenLinesCount::ParseDocument do
     before do
         @document = Nokogiri::XML(open('macbeth.xml')) 
@@ -15,7 +17,7 @@ describe CharacterSpokenLinesCount::ParseDocument do
         end
         it "should raise ParseDocumentException if not initialized object" do
             proc{
-                parse_document = CharacterSpokenLinesCount::ParseDocument.new
+              CharacterSpokenLinesCount::ParseDocument.new(nil)
             }.must_raise CharacterSpokenLinesCount::Error::ParseDocumentException
         end
     end
