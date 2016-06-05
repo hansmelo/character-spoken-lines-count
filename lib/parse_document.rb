@@ -1,6 +1,10 @@
 module CharacterSpokenLinesCount
     class ParseDocument
-        def get_hash(document)
+        
+        def initialize(document)
+            @document = document
+        end
+        def get_hash()
             {"MACBETH" => 1}
         end
     end
