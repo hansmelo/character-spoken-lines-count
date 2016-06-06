@@ -6,7 +6,7 @@ require_relative '../lib/exceptions'
 
 describe CharacterSpokenLinesCount::ParseDocument do
     before do
-        @document = Nokogiri::XML(open('macbeth.xml')) 
+        @document = Nokogiri::XML(open('spec/macbeth.xml')) 
     end
     
     describe "#parse" do
