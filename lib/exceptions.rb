@@ -1,5 +1,6 @@
 module CharacterSpokenLinesCount
-    module Error
-        class ParseDocumentException <  RuntimeError; end
+  module Error
+    class ParseDocumentException < RuntimeError;
     end
+  end
 end
