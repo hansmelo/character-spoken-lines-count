@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'nokogiri' 
+
 module CharacterSpokenLinesCount
     class Document
         def get_xml
